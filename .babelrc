@@ -2,6 +2,7 @@
   "presets": ["env", "vue"],
   "plugins": [
     "transform-object-rest-spread",
-    "transform-class-properties"   
+    "transform-class-properties",
+    "transform-vue-jsx"
   ]
 }

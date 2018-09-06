@@ -13,9 +13,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: [{
+          loader: 'babel-loader',
+          options: { plugins: ['transform-vue-jsx'] }
+        }]
       },
       {
         test: /\.(vue)$/,
@@ -25,7 +28,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.vue']
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new HtmlWebpackPlugin({
