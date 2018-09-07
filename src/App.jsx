@@ -25,6 +25,29 @@ export default {
           ))}
         </ul>
       )
+    },
+    renderPlanets (h) {
+      switch (this.planets.status) {
+        case 'fetched':
+          return this.printPlanets(h)
+          break
+        case 'fetching':
+          return (
+            <div>
+              Loading...
+            </div>
+          )
+          break
+        case 'error':
+          return (
+            <div>
+              Something Error
+            </div>
+          )
+          break
+        default:
+          break
+      }
     }
   },
   render(h) {
@@ -33,7 +56,7 @@ export default {
         <h1>Vue with jsx</h1>
         this is increment {this.increment} <br/>
         <button onClick={this.handleIncrement}>add+</button>
-        {this.printPlanets(h)}
+        {this.renderPlanets(h)}
       </div>
     )
   }
