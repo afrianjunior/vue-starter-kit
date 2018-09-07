@@ -22,12 +22,14 @@ export default {
     handleIncrement () {
       this.increment++
     },
-    planets (h) {
-      for (let i in this.dummyDatas) {
-        return (
-          <li>{ this.dummyDatas[i].name }</li>
-        )
-      }
+    printPlanets (h) {
+      return (
+        <ul>
+          {this.planets.items.map((item, key) => (
+            <li key={key}>{item.name}</li>
+          ))}
+        </ul>
+      )
     }
   },
   render(h) {
@@ -36,9 +38,7 @@ export default {
         <h1>Vue with jsx</h1>
         this is increment {this.increment} <br/>
         <button onClick={this.handleIncrement}>add+</button>
-        <ul>
-          {this.planets(h)}
-        </ul>
+        {this.printPlanets(h)}
       </div>
     )
   }
