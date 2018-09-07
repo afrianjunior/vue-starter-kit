@@ -2,12 +2,7 @@ import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
-      increment: 0,
-      dummyDatas: [
-        {
-          name: 'solo'
-        }
-      ]
+      increment: 0
     }
   },
   computed: {
