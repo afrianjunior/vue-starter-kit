@@ -6,9 +6,9 @@ export default {
     }
   },
   computed: {
-    planets () {
-      return this.$store.state.planets
-    }
+    ...mapGetters([
+      'planets'
+    ])
   },
   mounted () {
     this.$store.dispatch('FETCH_PLANETS')
